@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+
+{% block stylesheet %}
+
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css')}}"s>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+{% endblock %}
+
+
+{% block javascript %}
+
+{{ super() }}
+<script src="{{ url_for('static', filename='js/app.js')}}" charset="utf-8" defer></script>
+
+{% endblock %}
+
+
+{% block content %}
+{{ super() }}
+  <div class="content-wrapper">
+  {# displaying flash messages if present #}
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+            <li class="{{ category }} flash-msg">{{ message }} <span class="close"><a href="#">&#10006;</a></span></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  {% endwith %}
+
+  {# if file uploaded successfully to server than filename is not None.
+  So generate link to resource if filename is not None #}
+  {% if filename %}
+
+    <h2><a href="{{ url_for('.fetch', id=item.id, _external=True) }}" class="textToCopy">Link to your file</a></h2>
+    <input type="button" class="copyBtn button" value="copy to clipboard">
+
+  {% else %}
+
+    <div class="hero">
+      <p class="hero-text">
+        Store and Share files for 30 minutes.
+      </p>
+    </div>
+
+    <div class="sel-file-wrapper">
+      <p class="sel-file"><span>Currently no file selected.</span></p>
+    </div>
+
+    <div class="form">
+      <form class="file-upload" action="" method="post" enctype="multipart/form-data">
+        <div class="custom-file-upload">
+          {{ form.hidden_tag() }}
+          {{ form.file.label(class_='button upload-label') }}
+          {{ form.file(class_='upload') }}<br>
+          {{ form.password(class_='password', placeholder='Password') }}<br>
+        </div>
+        <input type="submit" name="submit" value="upload" class="button submit"><br>
+      </form>
+    </div>
+
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,3 @@
+venv/*
+data-dev.sqlite
+__pycache__/*

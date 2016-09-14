@@ -1,0 +1,215 @@
+header {
+  padding: 5px;
+  background-color: #F8555E;
+}
+
+header::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+header::before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+nav {
+  text-align: center;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
+  font-size: /* 60px */ 3em;
+  font-weight: 700;
+}
+
+.content-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero {
+  margin-top: 90px;
+  margin-bottom: 100px;
+  color: #ff5252;
+}
+
+.hero-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: /* 36px */ 2.25em;
+}
+
+.sel-file-wrapper {
+  color: #ff5252;
+  font-style: italic;
+  font-size: .8125em;
+}
+
+.upload {
+  display: block;
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.upload-label {
+  margin: 0 auto;
+}
+
+.button {
+  display: block;
+  width: 35%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: /* 30px */ 1.875em;
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  border: 1px solid #ff5252;
+  background-color: #ff5252;
+  color: white;
+  cursor: pointer;
+}
+
+.password {
+  display: block;
+  margin: 0 auto;
+  padding: 4px;
+  width: 34%;
+  font-size: /* 30px */ 1.875em;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #ff5252;
+  color: #ff5252;
+}
+
+.submit {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background-color: #F8555E;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.heart {
+  color: white;
+}
+
+/*style for flask flash messages*/
+.flashes {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  right: 30%;
+  margin-top: 0;
+}
+
+ul li {
+  list-style: none;
+  display: block;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: .9em;
+  margin: 0 auto;
+  color: white;
+}
+
+.silenter {
+  display: none;
+}
+
+.close a {
+  text-decoration: none;
+  color: white;
+}
+.close {
+  display: block;
+  float: right;
+}
+
+.error {
+  background-color: #f56262;
+}
+
+.warn {
+  background-color: #fdc051;
+}
+
+.info {
+  background-color: #87f987;
+}
+/*end of flask flash messages styles*/
+
+
+/*file link styling */
+.textToCopy {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: #ff5252;
+}
+
+.copyBtn {
+  padding: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+/*end of file link styling*/
+
+/*password check styling*/
+.password-check-form {
+  padding: 20px;
+}
+
+.password-check {
+  margin-bottom: -20px;
+  margin-top: 20px;
+}
+/*end of password check styling*/
+
+
+/* resource not found styling */
+.fi-not-found {
+  font-family: 'Roboto', sans-serif;
+  color: #F8555E;
+}
+/* end if resource not found */
+
+
+/*media query for 500px */
+@media (max-width: 500px) {
+  .logo a {
+    font-size: 3em;
+  }
+
+  .hero-text {
+    font-size: 1.75em;
+  }
+
+  .sel-file-wrapper {
+    font-size: .7em;
+  }
+
+  .button {
+    font-size: 1.12em;
+  }
+
+  .password {
+    font-size: 1.12em;
+  }
+}
